@@ -61,10 +61,6 @@ labellerinden altına birer tane daha ekleyip diğer sunucunuzun bilgilerini de 
 
 ```
 sudo tee ~/Nodecord/config.yaml > /dev/null <<EOF
-# Optionally uncomment to ignore specific alerts
-#alerts:
-#  ignore-alerts:
-#    - alertTypeMissedRecentBlocks
 
 notifications:
   service: discord
@@ -83,8 +79,7 @@ validators:
   sentries:
     - name: Sunucu-1
       grpc: 1.2.3.4:9090
-  
-  EOF
+      EOF
 ```
 Yine aynı şekilde birden fazla ağ için alarm kullanacaksanız. hem kujira hem osmosis için ayrı ayrı **validators:** bölümünü komple eklemelisiniz.
 Aşağıdaki resimde hem osmosis hem juno ağının validatör yapılandırmasını görebilirsiniz.
