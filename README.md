@@ -48,6 +48,17 @@ Ayrıca hangi node için rapor almak istiyorsanız **validators:** bölümünü 
 Kujira için örnek rpc: **https://kujira-rpc.polkachu.com/**
 - Adress: Bu ne cüzdan adresiniz ne de valoper adresinizdir. Buna dikkat edin. Consensüs adresiniz olmalı. Explorer'lardan bulabilirsiniz.
 - Chain-id: Kujira örneği için **Kaiyo-1**
+
+Sıra sentry bölümünde:
+- name: Sunucunuzun ismi. herhangi bir isim verebilirsiniz.
+- grpc: Sunucunuzun ip adresi + rpc portu
+
+Eğer aynı node birden fazla sunucuda çalıştırıyorsanız. (yedek bir sunucu barındırıyorsanız)
+- name
+- grpc
+
+labellerinden altına birer tane daha ekleyip diğer sunucunuzun bilgilerini de yazarak takip edebilirsiniz. 
+
 ```
 sudo tee ~/Nodecord/config.yaml > /dev/null <<EOF
 # Optionally uncomment to ignore specific alerts
@@ -75,44 +86,36 @@ validators:
   
   EOF
 ```
+Yine aynı şekilde birden fazla ağ için alarm kullanacaksanız. hem kujira hem osmosis için ayrı ayrı **validators:** bölümünü komple eklemelisiniz.
+Aşağıdaki resimde hem osmosis hem juno ağının validatör yapılandırmasını görebilirsiniz.
 
+![nodeist](https://i.hizliresim.com/hplawtm.png)
 
-See [here](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) for how to create a webhook for a discord channel.
+### Monitörü başlatma
 
-Once you've created the webhook, copy the URL. It'll look something like this: `https://discord.com/api/webhooks/978129125394247720/cwM4Ks-kWcK3Jsg4I_cboauYjOa48ngI2VKaS76afsMwuY7-U4Frw3BGcYXCJvZJ2kWD`
-
-This will be used later to be put into the config.yaml. The webhook id is `978129125394247720` (from the URL), and webhook token is `cwM4Ks-kWcK3Jsg4I_cboauYjOa48ngI2VKaS76afsMwuY7-U4Frw3BGcYXCJvZJ2kWD`
-
-Save the values as follows (note these values are from the URL):
-```yml:
-webhook:
-  id: 978129125394247720
-  token: cwM4Ks-kWcK3Jsg4I_cboauYjOa48ngI2VKaS76afsMwuY7-U4Frw3BGcYXCJvZJ2kWD
-```
-
-### Start monitoring
-
-Begin monitoring with:
+Aşağıdaki kod ile monitörü başlatabilirsiniz:
 
 ```bash
 Nodecord monitor
 ```
-
-By default, `Nodecord monitor` will look for `config.yaml` in the current working directory. To specify a different config file path, use the `--file`/`-f` flag:
+Bu kod default olarak oluşturduğunuz config.yaml dosyasından verileri çeker ve takibe başlar. 
+Ben testnet ve mainnet için iki ayrı yaml dosyası kullanıyorum. 
+testnet için bir de testnet.yaml dosyası oluşturabilirsiniz. ve bunu ayrı screen de aşağıdaki kod ile çalıştırabilirsiniz.
 
 ```bash
-Nodecord monitor -f ~/config.yaml
+Nodecord monitor -f ~/testnet.yaml
 ```
 
-When a validator is first added to `config.yaml` and Nodecord is started, a status message will be created in the discord channel and the ID of that message will be added to `config.yaml`. Pin this message so that the channel's pinned messages can act as a dashboard to see the realtime status of the validators.
+Nodecord başlatıldığında, discord kanalında bir durum mesajı oluşturacak ve bu mesajın ID'sini `config.yaml`a ekleyecektir.. Bu mesajı sabitleyin, böylece kanalın sabitlenmiş mesajları, doğrulayıcıların gerçek zamanlı durumunu görmek için bir gösterge panosu görevi görebilir.
 
 ![Screenshot from 2022-02-28 14-29-36](https://user-images.githubusercontent.com/6722152/156061805-330d1c76-acfa-4089-b327-f35f686fa0e7.png)
 
-Alerts will be posted when any error conditions are detected, and follow up messages will be posted when those errors are cleared.
+Herhangi bir hata durumu tespit edildiğinde uyarı mesajları gönderecek ve bu hatalar giderildiğinde bilgi mesajları yayınlanacaktır.
+
 
 ![Screenshot from 2022-02-16 10-53-43](https://user-images.githubusercontent.com/6722152/154326098-12aa787f-389e-4abf-af56-93918090ddc1.png)
 
-For high and critical errors, the configured discord user IDs will be tagged
+Yüksek ve kritik hatalar için, DISCORD_USER_ID bölümünde ki ID'ye sahip kullanıcı etiketlenecektir.
 
 ![Screenshot from 2022-02-16 11-38-00](https://user-images.githubusercontent.com/6722152/154333667-af823075-73fc-4d41-97ce-40432f3450ac.png)
 
