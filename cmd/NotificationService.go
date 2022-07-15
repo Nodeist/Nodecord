@@ -4,8 +4,8 @@ import "sync"
 
 type NotificationService interface {
 	// send one time alert for validator
-	SendValidatorAlertNotification(config *NodecordConfig, vm *ValidatorMonitor, stats ValidatorStats, alertNotification *ValidatorAlertNotification)
+	SendValidatorAlertNotification(config *HalfLifeConfig, vm *ValidatorMonitor, stats ValidatorStats, alertNotification *ValidatorAlertNotification)
 
 	// update (or create) realtime status for validator
-	UpdateValidatorRealtimeStatus(configFile string, config *NodecordConfig, vm *ValidatorMonitor, stats ValidatorStats, writeConfigMutex *sync.Mutex)
+	UpdateValidatorRealtimeStatus(configFile string, config *HalfLifeConfig, vm *ValidatorMonitor, stats ValidatorStats, writeConfigMutex *sync.Mutex)
 }

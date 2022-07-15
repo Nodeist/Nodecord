@@ -20,7 +20,7 @@ var monitorCmd = &cobra.Command{
 		if err != nil {
 			log.Fatalf("Error reading config.yaml: %v", err)
 		}
-		config := NodecordConfig{}
+		config := HalfLifeConfig{}
 		err = yaml.Unmarshal(dat, &config)
 		if err != nil {
 			log.Fatalf("Error parsing config.yaml: %v", err)

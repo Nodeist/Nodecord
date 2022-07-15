@@ -142,7 +142,7 @@ func (at *AlertConfig) AlertActive(alert AlertType) bool {
 	return true
 }
 
-type NodecordConfig struct {
+type HalfLifeConfig struct {
 	AlertConfig   AlertConfig          `yaml:"alerts"`
 	Notifications *NotificationsConfig `yaml:"notifications"`
 	Validators    []*ValidatorMonitor  `yaml:"validators"`
@@ -174,7 +174,7 @@ type ValidatorMonitor struct {
 	Sentries               *[]Sentry `yaml:"sentries"`
 }
 
-func saveConfig(configFile string, config *NodecordConfig, writeConfigMutex *sync.Mutex) {
+func saveConfig(configFile string, config *HalfLifeConfig, writeConfigMutex *sync.Mutex) {
 	writeConfigMutex.Lock()
 	defer writeConfigMutex.Unlock()
 

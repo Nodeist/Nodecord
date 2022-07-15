@@ -159,7 +159,7 @@ func (service *DiscordNotificationService) client() *webhook.Client {
 // implements NotificationService interface
 func (service *DiscordNotificationService) UpdateValidatorRealtimeStatus(
 	configFile string,
-	config *NodecordConfig,
+	config *HalfLifeConfig,
 	vm *ValidatorMonitor,
 	stats ValidatorStats,
 	writeConfigMutex *sync.Mutex,
@@ -202,7 +202,7 @@ func (service *DiscordNotificationService) UpdateValidatorRealtimeStatus(
 
 // implements NotificationService interface
 func (service *DiscordNotificationService) SendValidatorAlertNotification(
-	config *NodecordConfig,
+	config *HalfLifeConfig,
 	vm *ValidatorMonitor,
 	stats ValidatorStats,
 	alertNotification *ValidatorAlertNotification,
