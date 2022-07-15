@@ -58,7 +58,7 @@ Eğer aynı node birden fazla sunucuda çalıştırıyorsanız. (yedek bir sunuc
 - grpc
 
 labellerinden altına birer tane daha ekleyip diğer sunucunuzun bilgilerini de yazarak takip edebilirsiniz. 
-`nano ~/Nodecord/config.yaml` yazarak dosyanızı oluşturun ve aşağıdakileri ekleyerek kaydedin.
+`nano ~/Nodecord/config.yaml` yazarak dosyanızı açın. aşağıdakine benzer bir ekran göreceksiniz. gerekli yerleri düzenleyerek kaydedin.
 
 ```
 notifications:
