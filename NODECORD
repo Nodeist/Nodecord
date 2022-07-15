@@ -15,13 +15,13 @@ sudo apt update && sudo apt upgrade -y
 echo "=================================================="
 
 echo -e "\e[1m\e[32m2. GEREKLI PAKETLER INDIRILIYOR... \e[0m" && sleep 1
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y golang-go
 
 
 echo "=================================================="
 
 echo -e "\e[1m\e[32m3. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
-ver="1.18.2"
+ver="1.17"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
