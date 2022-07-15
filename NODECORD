@@ -10,21 +10,24 @@ echo "=================================================="
 sleep 2
 
 echo -e "\e[1m\e[32m1. GUNCELLEMELER YUKLENIYOR... \e[0m" && sleep 1
-sudo apt-get update
+sudo apt update && sudo apt upgrade -y
 
 echo "=================================================="
 
 echo -e "\e[1m\e[32m2. GEREKLI PAKETLER INDIRILIYOR... \e[0m" && sleep 1
-sudo apt install jq -y
-sudo apt install python3-pip -y
-sudo pip install yq
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+
 
 echo "=================================================="
 
 echo -e "\e[1m\e[32m3. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
-cd 
-wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
+ver="1.18.2"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+go version
 
 # GO YAPILANDIRMA
 cat <<EOF >> ~/.profile
@@ -33,7 +36,7 @@ export GOPATH=$HOME/go
 export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 EOF
-source ~/.profile
+source ~/.bash_profile
 go version
 
 sleep 1
