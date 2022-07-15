@@ -60,7 +60,7 @@ Eğer aynı node birden fazla sunucuda çalıştırıyorsanız. (yedek bir sunuc
 labellerinden altına birer tane daha ekleyip diğer sunucunuzun bilgilerini de yazarak takip edebilirsiniz. 
 
 ```
-sudo tee ~/Nodecord/config.yaml > /dev/null <<EOF
+sudo tee /Nodecord/config.yaml > /dev/null <<EOF
 
 notifications:
   service: discord
