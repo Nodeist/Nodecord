@@ -1,0 +1,50 @@
+#!/bin/bash
+echo "=================================================="
+echo "   _  ______  ___  __________________";
+echo "  / |/ / __ \/ _ \/ __/  _/ __/_  __/";
+echo " /    / /_/ / // / _/_/ /_\ \  / /   ";
+echo "/_/|_/\____/____/___/___/___/ /_/    ";
+echo -e "\e[0m"
+echo "==================================================" 
+
+sleep 2
+
+echo -e "\e[1m\e[32m1. GUNCELLEMELER YUKLENIYOR... \e[0m" && sleep 1
+sudo apt-get update
+
+echo "=================================================="
+
+echo -e "\e[1m\e[32m2. GEREKLI PAKETLER INDIRILIYOR... \e[0m" && sleep 1
+sudo apt install jq -y
+sudo apt install python3-pip -y
+sudo pip install yq
+
+echo "=================================================="
+
+echo -e "\e[1m\e[32m3. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
+cd 
+wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
+
+# GO YAPILANDIRMA
+cat <<EOF >> ~/.profile
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+EOF
+source ~/.profile
+go version
+
+sleep 1
+
+echo "=================================================="
+
+echo -e "\e[1m\e[32m4. NODECORD REPOSU INDIRILIYOR ... \e[0m" && sleep 1
+git clone https://github.com/Nodeist/Nodecord.git
+cd ~/Nodecord
+go install
+
+echo "=================================================="
+
+echo -e "\e[1m\e[32m5. KURULUM BAŞARIYLA TAMAMLANDI... \e[0m" && sleep 1
