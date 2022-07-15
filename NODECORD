@@ -21,14 +21,12 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 echo "=================================================="
 
 echo -e "\e[1m\e[32m3. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
-ver="1.18.2"
 cd $HOME
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
+sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
+rm "go1.18.2.linux-amd64.tar.gz"
 go version
-
 # GO YAPILANDIRMA
 cat <<EOF >> ~/.profile
 export GOROOT=/usr/local/go
