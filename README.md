@@ -90,7 +90,7 @@ Aşağıdaki resimde hem osmosis hem juno ağının validatör yapılandırması
 Aşağıdaki kod ile monitörü başlatabilirsiniz:
 
 ```bash
-cd & cd Nodecord & Nodecord monitor
+cd && cd Nodecord && Nodecord monitor
 ```
 Bu kod default olarak oluşturduğunuz config.yaml dosyasından verileri çeker ve takibe başlar. 
 Ben testnet ve mainnet için iki ayrı yaml dosyası kullanıyorum. 
