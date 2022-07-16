@@ -31,8 +31,8 @@ sleep 1
 echo "=================================================="
 
 echo -e "\e[1m\e[32m2. NODECORD REPOSU INDIRILIYOR ... \e[0m" && sleep 1
-git clone https://github.com/strangelove-ventures/half-life.git
-cd ~/half-life
+git clone https://github.com/Nodeist/Nodecord.git
+cd ~/Nodecord
 go install
 
 echo "=================================================="
