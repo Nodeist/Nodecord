@@ -104,7 +104,7 @@ Nodecord başlatıldığında, discord kanalında bir durum mesajı oluşturacak
 
 ![Nodeist](https://i.hizliresim.com/6qt5b5t.png)
 
-Herhangi bir hata durumu tespit edildiğinde uyarı mesajları gönderecek ve bu hatalar giderildiğinde bilgi mesajları yayınlanacaktır.
+Herhangi bir hata durumu tespit edildiğinde uyarı mesajları gönderecektir.
 
 
 ![Nodeist](https://i.hizliresim.com/8ow2s04.png)
@@ -113,3 +113,4 @@ Yüksek ve kritik hatalar için, DISCORD_USER_ID bölümünde ki ID'ye sahip kul
 
 ![Nodeist](https://i.hizliresim.com/2g4vd1k.png)
 
+Hatalar giderildiğinde bilgi mesajı gönderecektir.
