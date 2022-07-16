@@ -102,14 +102,14 @@ cd && cd Nodecord && Nodecord monitor -f ~/testnet.yaml
 
 Nodecord başlatıldığında, discord kanalında bir durum mesajı oluşturacak ve bu mesajın ID'sini `config.yaml`a ekleyecektir.. Bu mesajı sabitleyin, böylece kanalın sabitlenmiş mesajları, doğrulayıcıların gerçek zamanlı durumunu görmek için bir gösterge panosu görevi görebilir.
 
-![Screenshot from 2022-02-28 14-29-36](https://user-images.githubusercontent.com/6722152/156061805-330d1c76-acfa-4089-b327-f35f686fa0e7.png)
+![Nodeist](https://i.hizliresim.com/6qt5b5t.png)
 
 Herhangi bir hata durumu tespit edildiğinde uyarı mesajları gönderecek ve bu hatalar giderildiğinde bilgi mesajları yayınlanacaktır.
 
 
-![Screenshot from 2022-02-16 10-53-43](https://user-images.githubusercontent.com/6722152/154326098-12aa787f-389e-4abf-af56-93918090ddc1.png)
+![Nodeist](https://i.hizliresim.com/8ow2s04.png)
 
 Yüksek ve kritik hatalar için, DISCORD_USER_ID bölümünde ki ID'ye sahip kullanıcı etiketlenecektir.
 
-![Screenshot from 2022-02-16 11-38-00](https://user-images.githubusercontent.com/6722152/154333667-af823075-73fc-4d41-97ce-40432f3450ac.png)
+![Nodeist](https://i.hizliresim.com/2g4vd1k.png)
 
