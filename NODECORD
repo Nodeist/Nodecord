@@ -13,12 +13,9 @@ sleep 2
 echo "=================================================="
 
 echo -e "\e[1m\e[32m1. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
-cd $HOME
 wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf go1.18.2.linux-amd64.tar.gz
-rm "go1.18.2.linux-amd64.tar.gz"
-go version
+
 # GO YAPILANDIRMA
 cat <<EOF >> ~/.profile
 export GOROOT=/usr/local/go
