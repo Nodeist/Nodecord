@@ -114,3 +114,7 @@ Yüksek ve kritik hatalar için, DISCORD_USER_ID bölümünde ki ID'ye sahip kul
 ![Nodeist](https://i.hizliresim.com/2g4vd1k.png)
 
 Hatalar giderildiğinde bilgi mesajı gönderecektir.
+
+
+## Referans Listesi
+Bu proje [Strangelove Ventures](https://github.com/strangelove-ventures)'den esinlenilmiştir.
