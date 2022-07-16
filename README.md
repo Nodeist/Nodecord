@@ -97,7 +97,7 @@ Ben testnet ve mainnet için iki ayrı yaml dosyası kullanıyorum.
 testnet için bir de testnet.yaml dosyası oluşturabilirsiniz. ve bunu ayrı screen de aşağıdaki kod ile çalıştırabilirsiniz.
 
 ```bash
-cd & cd Nodecord & Nodecord monitor -f ~/testnet.yaml
+cd && cd Nodecord && Nodecord monitor -f ~/testnet.yaml
 ```
 
 Nodecord başlatıldığında, discord kanalında bir durum mesajı oluşturacak ve bu mesajın ID'sini `config.yaml`a ekleyecektir.. Bu mesajı sabitleyin, böylece kanalın sabitlenmiş mesajları, doğrulayıcıların gerçek zamanlı durumunu görmek için bir gösterge panosu görevi görebilir.
