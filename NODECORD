@@ -9,18 +9,10 @@ echo "=================================================="
 
 sleep 2
 
-echo -e "\e[1m\e[32m1. GUNCELLEMELER YUKLENIYOR... \e[0m" && sleep 1
-sudo apt update && sudo apt upgrade -y
 
 echo "=================================================="
 
-echo -e "\e[1m\e[32m2. GEREKLI PAKETLER INDIRILIYOR... \e[0m" && sleep 1
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y golang-go
-
-
-echo "=================================================="
-
-echo -e "\e[1m\e[32m3. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m1. NODECORD GO YÜKLENİYOR... \e[0m" && sleep 1
 cd $HOME
 wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
@@ -41,11 +33,11 @@ sleep 1
 
 echo "=================================================="
 
-echo -e "\e[1m\e[32m4. NODECORD REPOSU INDIRILIYOR ... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m2. NODECORD REPOSU INDIRILIYOR ... \e[0m" && sleep 1
 git clone https://github.com/strangelove-ventures/half-life.git
 cd ~/half-life
 go install
 
 echo "=================================================="
 
-echo -e "\e[1m\e[32m5. KURULUM BAŞARIYLA TAMAMLANDI... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m KURULUM BAŞARIYLA TAMAMLANDI... \e[0m" && sleep 1
