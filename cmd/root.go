@@ -7,19 +7,19 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "halflife",
-	Short: "Validator monitoring and alerting",
-	Long: `Cosmos-based blockchain validator monitoring and alerting utility
+	Use:   "nodecord",
+	Short: "Doğrulayıcı takip ve alarm sistemi",
+	Long: `Cosmos SDK tabanlı ağlarda alarm gorevi gorur. by Nodeist
 	
-Checks for scenarios such as:
-- Slashing period uptime
-- Recent missed blocks (is the validator signing currently)
-- Jailed status
-- Tombstoned status
+Sunları kontrol eder:
+- Slashin periyodu
+- Validatorun kaçırdıgı bloklar
+- Jail olma durumu
+- Tombstone olma durumu
 
-Discord messages are created in the configured webhook channel for:
-- Current validator status
-- Detected alerts
+Discord sunucusuna asagıdaki durumları rapor eder:
+- Validatorun anlık durumu
+- Sorun tespiti alarmı
 `,
 }
 

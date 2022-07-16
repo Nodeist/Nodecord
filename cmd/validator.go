@@ -199,7 +199,7 @@ func runMonitor(
 	alertState *ValidatorAlertState,
 	alertStateLock *sync.Mutex,
 	configFile string,
-	config *HalfLifeConfig,
+	config *NodecordConfig,
 	vm *ValidatorMonitor,
 	writeConfigMutex *sync.Mutex,
 ) {

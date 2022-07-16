@@ -1,4 +1,4 @@
-module github.com/strangelove-ventures/halflife
+module github.com/Nodeist/Nodecord
 
 go 1.17
 

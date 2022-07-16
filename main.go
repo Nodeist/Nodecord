@@ -1,6 +1,6 @@
 package main
 
-import "github.com/strangelove-ventures/halflife/cmd"
+import "github.com/Nodeist/Nodecord/cmd"
 
 func main() {
 	cmd.Execute()
